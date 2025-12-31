@@ -1,86 +1,458 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
+  <meta charset="UTF-8">
+  <title>Bags of Sunshine – Lux et Cura Foundation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts + Shared Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Use same core palette as index */
+    :root {
+      --lc-black: #1d1d1f;
+      --lc-white: #ffffff;
+      --lc-grey:  #f5f5f7;
+      --lc-orange:#f04c24;
+    }
+
+    .bos-page {
+      background-color: var(--lc-white);
+    }
+
+    /* Layout */
+    .bos-hero {
+      background-color: var(--lc-grey);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 40px 0;
+    }
+
+    .bos-hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .bos-logo-block {
+      text-align: center;
+    }
+
+    .bos-logo-block img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px; /* slight rounding only */
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .bos-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.78rem;
+      color: #555;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .bos-hero h1 {
+      font-family: "Calling Code", "Arimo", system-ui, sans-serif;
+      font-size: 2rem;
+      color: var(--lc-black);
+      margin-bottom: 10px;
+    }
+
+    .bos-hero-subtitle {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    .bos-hero-lead {
+      color: #444;
+      margin-bottom: 18px;
+    }
+
+    .bos-tags {
+      margin-bottom: 16px;
+    }
+
+    .bos-tag {
+      display: inline-block;
+      border: 1px solid rgba(0,0,0,0.12);
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      color: #555;
+    }
+
+    .bos-hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .bos-button-primary {
+      background-color: var(--lc-orange);
+      border: 1px solid var(--lc-orange);
+      color: var(--lc-white);
+    }
+
+    .bos-button-primary:hover {
+      background-color: var(--lc-black);
+      border-color: var(--lc-black);
+    }
+
+    .bos-button-secondary {
+      border: 1px solid var(--lc-black);
+      color: var(--lc-black);
+      background-color: transparent;
+    }
+
+    .bos-button-secondary:hover {
+      background-color: var(--lc-grey);
+    }
+
+    .bos-breadcrumb {
+      font-size: 0.85rem;
+      margin-top: 12px;
+    }
+
+    .bos-breadcrumb a {
+      color: var(--lc-black);
+      text-decoration: none;
+    }
+
+    .bos-breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    .bos-section {
+      padding: 50px 0;
+    }
+
+    .bos-section-alt {
+      background-color: var(--lc-grey);
+    }
+
+    .bos-section-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .bos-section-header h2 {
+      font-family: "Calling Code", "Arimo", system-ui, sans-serif;
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+      color: var(--lc-black);
+    }
+
+    .bos-section-header p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #444;
+    }
+
+    .bos-two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    /* Items grid */
+    .bos-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .bos-item-pill {
+      list-style: none;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 8px 10px;
+      font-size: 0.9rem;
+      text-align: center;
+      background-color: var(--lc-white);
+    }
+
+    /* Panels */
+    .bos-panel {
+      background-color: var(--lc-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 20px;
+    }
+
+    .bos-panel h3 {
+      margin-bottom: 8px;
+    }
+
+    .bos-panel p {
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .bos-links-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .bos-links-list li + li {
+      margin-top: 6px;
+    }
+
+    .bos-links-list a {
+      color: var(--lc-orange);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .bos-links-list a:hover {
+      text-decoration: underline;
+    }
+
+    .bos-note {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    .bos-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      padding: 3px 8px;
+      border: 1px solid rgba(0,0,0,0.15);
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    @media (max-width: 800px) {
+      .bos-hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .bos-two-column {
+        grid-template-columns: 1fr;
+      }
+
+      .bos-logo-block {
+        order: -1;
+      }
+    }
   </style>
 </head>
-<body>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p2"><span class="s1">&lt;html lang="en"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;head&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Bags of Sunshine - Lux et Cura Foundation&lt;/title&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;link rel="stylesheet" href="css/style.css"&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p2"><span class="s1">&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;img src="images/logo.png" alt="Lux et Cura Foundation Logo"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;nav&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="index.html"&gt;Home&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="about.html"&gt;About&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="projects.html"&gt;Projects&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="donate.html"&gt;Donate&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="contact.html"&gt;Contact&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/nav&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/header&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;section class="bags-of-sunshine-banner"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;img src="images/bags-of-sunshine-logo.png" alt="Bags of Sunshine Logo" width="200"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Bags of Sunshine Project&lt;/h1&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;Bringing joy, hope, and shine one bag at a time to local pediatric and elderly patients in San Francisco.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;main class="container"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section class="bags-of-sunshine-section"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;About the Project&lt;/h2&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Bags of Sunshine is a youth-run volunteer initiative sponsored by Lux et Cura Foundation. We organize volunteers to prepare and deliver bags filled with high-quality safe items including:&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul class="bags-of-sunshine-items"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Lego Sets&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Reading and Coloring Books&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Toys&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Crafts&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Stuffed Animals&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Journals&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Coloring/Art Kits&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Mini Puzzles&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Card Games &amp; Stickers&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;Stress Balls &amp; Sensory Toys&lt;/li&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section class="bags-of-sunshine-section"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2&gt;How to Support&lt;/h2&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Your donation helps us purchase materials and supplies for the bags. Any contribution goes a long way.&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="button"&gt;Donate via GiveButter&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="button"&gt;Amazon Wishlist&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">            </span>&lt;a href="#" class="button"&gt;Target Wishlist&lt;/a&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;"Light and Care in Service of Community"&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;EIN: [placeholder]&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p&gt;Lux et Cura Foundation is a 501(c)(3) nonprofit organization (pending IRS determination).&lt;/p&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/footer&gt;</span></p>
-<p class="p1"><span class="s1"></span><br></p>
-<p class="p2"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p2"><span class="s1">&lt;/html&gt;</span></p>
+<body class="bos-page">
+  <!-- Shared Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-block">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Lux et Cura Foundation logo">
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#get-involved">Get Involved</a>
+        <a href="index.html#donate">Donate</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bos-hero">
+    <div class="container bos-hero-inner">
+      <div>
+        <div class="bos-kicker">Youth‑Led Project of Lux et Cura Foundation</div>
+        <h1>Bags of Sunshine</h1>
+        <p class="bos-hero-subtitle">Bringing joy, hope, and shine—one bag at a time—to pediatric and elderly patients in San Francisco.</p>
+        <p class="bos-hero-lead">
+          Bags of Sunshine is a volunteer, youth‑run project sponsored by Lux et Cura Foundation. Young people and community volunteers prepare and deliver thoughtfully assembled bags filled with high‑quality, safe items to brighten the days of patients who could use extra encouragement and care.
+        </p>
+
+        <div class="bos-tags">
+          <span class="bos-tag">Youth leadership</span>
+          <span class="bos-tag">Patient comfort</span>
+          <span class="bos-tag">Community kindness</span>
+        </div>
+
+        <div class="bos-hero-ctas">
+          <a href="#donate" class="button bos-button-primary">Donate to Bags of Sunshine</a>
+          <a href="#volunteer" class="button bos-button-secondary">Volunteer with the project</a>
+        </div>
+
+        <p class="bos-breadcrumb">
+          ← <a href="index.html">Back to Lux et Cura Foundation</a>
+        </p>
+      </div>
+
+      <div class="bos-logo-block">
+        <img src="images/bags-of-sunshine-logo.png" alt="Bags of Sunshine project logo">
+      </div>
+    </div>
+  </section>
+
+  <!-- What is a Bag of Sunshine -->
+  <section class="bos-section">
+    <div class="container">
+      <div class="bos-section-header">
+        <h2>What is a “Bag of Sunshine”?</h2>
+        <p>Each bag is a curated bundle of joy designed to bring comfort, distraction, and delight to kids and older adults receiving care in San Francisco.</p>
+      </div>
+
+      <div class="bos-two-column">
+        <div>
+          <h3>Joy in a bag</h3>
+          <p>
+            Bags of Sunshine are gifted to local pediatric and elderly patients who may be facing long days, uncertainty, or isolation. Every bag is assembled by youth and volunteers who want recipients to feel seen, supported, and cared for.
+          </p>
+          <p>
+            As the project grows, we plan to host fundraising events, run supply drives, and deepen partnerships with hospitals, clinics, and care facilities across the city.
+          </p>
+        </div>
+
+        <div>
+          <h3>What goes inside</h3>
+          <p>Each bag is filled with safe, age‑appropriate, and engaging items, such as:</p>
+          <ul class="bos-items-grid">
+            <li class="bos-item-pill">Lego sets</li>
+            <li class="bos-item-pill">Reading & coloring books</li>
+            <li class="bos-item-pill">Toys & crafts</li>
+            <li class="bos-item-pill">Stuffed animals</li>
+            <li class="bos-item-pill">Journals & notebooks</li>
+            <li class="bos-item-pill">Coloring kits & art kits</li>
+            <li class="bos-item-pill">Crayons & markers</li>
+            <li class="bos-item-pill">Origami paper & mini puzzles</li>
+            <li class="bos-item-pill">Small card games & stickers</li>
+            <li class="bos-item-pill">Stress balls & sensory toys</li>
+            <li class="bos-item-pill">Soft toys</li>
+            <li class="bos-item-pill">Lip balm & wipes</li>
+          </ul>
+          <p class="bos-note">Items may vary by age group and setting, but each bag is built with care, safety, and dignity in mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Youth leadership & connection to Lux et Cura -->
+  <section class="bos-section bos-section-alt">
+    <div class="container">
+      <div class="bos-two-column">
+        <div class="bos-panel">
+          <span class="bos-badge">Youth‑Led</span>
+          <h3>Led by youth, supported by community</h3>
+          <p>
+            Bags of Sunshine is designed and run by young volunteers who want to make a tangible difference in their city. Adult mentors provide guidance, but youth voices shape the ideas, outreach, and the contents of each bag.
+          </p>
+          <p>
+            Through this project, young people learn leadership, empathy, and project‑planning skills while building a culture of kindness and service.
+          </p>
+        </div>
+
+        <div class="bos-panel">
+          <h3>A project of Lux et Cura</h3>
+          <p>
+            The Bags of Sunshine Project is one of several emerging initiatives sponsored by Lux et Cura Foundation to support youth leadership and community‑centered service.
+          </p>
+          <p>
+            As the foundation grows, Bags of Sunshine will sit alongside other projects that help neighbors care for one another in practical, visible ways.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate & Wishlists -->
+  <section id="donate" class="bos-section">
+    <div class="container">
+      <div class="bos-section-header">
+        <h2>Donate to Bags of Sunshine</h2>
+        <p>Any donation—large or small—goes directly toward filling and delivering more bags to patients who could use encouragement.</p>
+      </div>
+
+      <div class="bos-two-column">
+        <div class="bos-panel">
+          <h3>Donate items directly</h3>
+          <p>We welcome directly donated items from our lists, or items purchased off of our wishlists.</p>
+          <ul class="bos-links-list">
+            <li><a href="#" target="_blank" rel="noopener">Amazon Wishlist</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Target Wishlist</a></li>
+          </ul>
+          <p class="bos-note">Links will be updated as needs change so that your support matches what recipients need most.</p>
+        </div>
+
+        <div class="bos-panel">
+          <h3>Make a financial gift</h3>
+          <p>Monetary donations help purchase supplies, cover packing and delivery costs, and keep Bags of Sunshine giving!</p>
+          <a href="https://givebutter.com/" target="_blank" rel="noopener" class="button bos-button-primary">Donate to Bags of Sunshine</a>
+          <!-- Replace with the specific Givebutter campaign URL for Bags of Sunshine -->
+          <p class="bos-note">The Bags of Sunshine project is sponsored by the Lux et Cura Foundation, a 501(c)(3) nonprofit organization. Qualifying gifted items and monetary donations may be tax deductible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteer -->
+  <section id="volunteer" class="bos-section bos-section-alt">
+    <div class="container">
+      <div class="bos-section-header">
+        <h2>Volunteer with Bags of Sunshine</h2>
+        <p>Help assemble, organize, and deliver Bags of Sunshine—and bring a little extra light to someone’s day.</p>
+      </div>
+
+      <div class="bos-two-column">
+        <div>
+          <h3>Ways to help</h3>
+          <ul class="simple-list">
+            <li>Join packing days to assemble bags for pediatric and elderly patients.</li>
+            <li>Help organize item drives at schools, workplaces, or community groups.</li>
+            <li>Support delivery coordination with partner sites in San Francisco.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Stay in the loop</h3>
+          <p>If you or your youth group would like to get involved, please reach out by email. We’ll share upcoming project dates, roles, and ways to help from home.</p>
+          <p><strong>Contact:</strong> <a href="mailto:luxetcurafoundation@gmail.com">luxetcurafoundation@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-column">
+        <h3>Bags of Sunshine</h3>
+        <p class="footer-tagline">Bringing joy, hope, and shine—one bag at a time.</p>
+        <p>San Francisco, CA</p>
+        <p><a href="mailto:luxetcurafoundation@gmail.com">luxetcurafoundation@gmail.com</a></p>
+      </div>
+      <div class="footer-column">
+        <h3>Sponsored by</h3>
+        <p>Bags of Sunshine is a volunteer youth‑run project sponsored by Lux et Cura Foundation.</p>
+        <p><a href="index.html">Visit Lux et Cura Foundation</a></p>
+      </div>
+      <div class="footer-column">
+        <h3>Support</h3>
+        <p>Donations to the Bags of Sunshine Project help fund supplies and outreach for local pediatric and elderly patients.</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> Lux et Cura Foundation · Bags of Sunshine Project.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
