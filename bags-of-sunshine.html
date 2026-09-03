@@ -44,7 +44,7 @@
       max-width: 220px;
       width: 100%;
       height: auto;
-      border-radius: 8px; /* slight rounding only */
+      border-radius: 8px;
       border: 1px solid rgba(0,0,0,0.06);
     }
 
@@ -65,14 +65,16 @@
     }
 
     .bos-hero-subtitle {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       margin-bottom: 12px;
       color: #333;
+      line-height: 1.55;
     }
 
     .bos-hero-lead {
       color: #444;
       margin-bottom: 18px;
+      line-height: 1.65;
     }
 
     .bos-tags {
@@ -141,6 +143,12 @@
       background-color: var(--lc-grey);
     }
 
+    .bos-section-warm {
+      background-color: #fffaf7;
+      border-top: 1px solid rgba(240,76,36,0.08);
+      border-bottom: 1px solid rgba(240,76,36,0.08);
+    }
+
     .bos-section-header {
       text-align: center;
       margin-bottom: 30px;
@@ -154,9 +162,10 @@
     }
 
     .bos-section-header p {
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto;
       color: #444;
+      line-height: 1.6;
     }
 
     .bos-two-column {
@@ -165,12 +174,19 @@
       gap: 28px;
     }
 
+    .bos-three-column {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
     /* Items grid */
     .bos-items-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
       gap: 10px;
       margin-top: 10px;
+      padding-left: 0;
     }
 
     .bos-item-pill {
@@ -196,6 +212,11 @@
     .bos-panel p {
       color: #444;
       margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .bos-panel ul {
+      line-height: 1.65;
     }
 
     .bos-links-list {
@@ -220,7 +241,8 @@
     .bos-note {
       font-size: 0.9rem;
       color: #555;
-      margin-top: 6px;
+      margin-top: 8px;
+      line-height: 1.55;
     }
 
     .bos-badge {
@@ -232,6 +254,78 @@
       border: 1px solid rgba(0,0,0,0.15);
       margin-bottom: 8px;
       color: #333;
+    }
+
+    .bos-callout {
+      border-left: 4px solid var(--lc-orange);
+      padding: 4px 0 4px 16px;
+      margin: 22px 0 0;
+      color: #333;
+    }
+
+    .bos-callout p {
+      margin-bottom: 0;
+    }
+
+    .bos-partner-card {
+      background-color: var(--lc-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 20px;
+      height: 100%;
+    }
+
+    .bos-partner-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .bos-partner-card p {
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .bos-cta-band {
+      background-color: var(--lc-black);
+      color: var(--lc-white);
+      padding: 34px 0;
+    }
+
+    .bos-cta-inner {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bos-cta-band h2 {
+      font-family: "Calling Code", "Arimo", system-ui, sans-serif;
+      margin-bottom: 8px;
+      color: var(--lc-white);
+      font-size: 1.55rem;
+    }
+
+    .bos-cta-band p {
+      margin: 0;
+      color: rgba(255,255,255,0.86);
+      max-width: 760px;
+      line-height: 1.6;
+    }
+
+    .bos-cta-band .bos-button-primary {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .bos-three-column {
+        grid-template-columns: 1fr;
+      }
+
+      .bos-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     @media (max-width: 800px) {
@@ -261,8 +355,9 @@
       <nav class="main-nav">
         <a href="index.html#about">About</a>
         <a href="index.html#programs">Programs</a>
-        <a href="index.html#get-involved">Get Involved</a>
-        <a href="index.html#donate">Donate</a>
+        <a href="#community-partners">Community Partners</a>
+        <a href="#donate">Donate</a>
+        <a href="#volunteer">Volunteer</a>
         <a href="index.html#contact">Contact</a>
       </nav>
     </div>
@@ -272,22 +367,26 @@
   <section class="bos-hero">
     <div class="container bos-hero-inner">
       <div>
-        <div class="bos-kicker">Youth‑Led Project of Lux et Cura Foundation</div>
+        <div class="bos-kicker">Youth-Led Community Service Project of Lux et Cura Foundation</div>
         <h1>Bags of Sunshine</h1>
-        <p class="bos-hero-subtitle">Bringing joy, hope, and shine—one bag at a time—to pediatric and elderly patients in San Francisco.</p>
+        <p class="bos-hero-subtitle">Bringing comfort, connection, and a little sunshine to neighbors who could use it.</p>
         <p class="bos-hero-lead">
-          Bags of Sunshine is a volunteer, youth‑run project sponsored by Lux et Cura Foundation. Young people and community volunteers prepare and deliver thoughtfully assembled bags filled with high‑quality, safe items to brighten the days of patients who could use extra encouragement and care.
+          Bags of Sunshine is a youth-led community service project sponsored by Lux et Cura Foundation. Young people and community volunteers collect donated goods and assemble thoughtful care packages for community members experiencing illness, hardship, isolation, or other circumstances where a practical gesture of care can make a difference.
+        </p>
+        <p class="bos-hero-lead">
+          Bags may be shared with children and families, older adults, patients receiving medical care, isolated community members, and others in need through partnerships with hospitals, senior communities, shelters, schools, community organizations, and other local programs.
         </p>
 
         <div class="bos-tags">
           <span class="bos-tag">Youth leadership</span>
-          <span class="bos-tag">Patient comfort</span>
-          <span class="bos-tag">Community kindness</span>
+          <span class="bos-tag">Community care</span>
+          <span class="bos-tag">Neighbors helping neighbors</span>
         </div>
 
         <div class="bos-hero-ctas">
           <a href="#donate" class="button bos-button-primary">Donate to Bags of Sunshine</a>
-          <a href="#volunteer" class="button bos-button-secondary">Volunteer with the project</a>
+          <a href="#product-donations" class="button bos-button-secondary">Donate Products</a>
+          <a href="#volunteer" class="button bos-button-secondary">Volunteer</a>
         </div>
 
         <p class="bos-breadcrumb">
@@ -306,66 +405,213 @@
     <div class="container">
       <div class="bos-section-header">
         <h2>What is a “Bag of Sunshine”?</h2>
-        <p>Each bag is a curated bundle of joy designed to bring comfort, distraction, and delight to kids and older adults receiving care in San Francisco.</p>
+        <p>A thoughtfully assembled package of useful, comforting, and enjoyable items created to remind someone in our community that they are seen and cared for.</p>
       </div>
 
       <div class="bos-two-column">
         <div>
           <h3>Joy in a bag</h3>
           <p>
-            Bags of Sunshine are gifted to local pediatric and elderly patients who may be facing long days, uncertainty, or isolation. Every bag is assembled by youth and volunteers who want recipients to feel seen, supported, and cared for.
+            Bags of Sunshine began with the simple idea of bringing encouragement to pediatric and older adult patients. As the project grows, we are expanding that idea beyond the healthcare setting to reach community members who may be experiencing illness, financial hardship, social isolation, displacement, or other challenging circumstances.
           </p>
           <p>
-            As the project grows, we plan to host fundraising events, run supply drives, and deepen partnerships with hospitals, clinics, and care facilities across the city.
+            There is no single Bag of Sunshine. Contents are adapted to the people and communities receiving them. A bag for a child in the hospital may contain books, art supplies, toys, and activities. A bag for an isolated older adult might include personal-care products, a puzzle book, warm socks, snacks, and a handwritten card.
           </p>
+          <div class="bos-callout">
+            <p><strong>Every bag is assembled with useful items, thoughtful choices, dignity, and human connection in mind.</strong></p>
+          </div>
         </div>
 
         <div>
           <h3>What goes inside</h3>
-          <p>Each bag is filled with safe, age‑appropriate, and engaging items, such as:</p>
+          <p>Contents vary according to recipient needs, community-partner requests, and donated inventory. Examples may include:</p>
           <ul class="bos-items-grid">
-            <li class="bos-item-pill">Lego sets</li>
-            <li class="bos-item-pill">Reading & coloring books</li>
-            <li class="bos-item-pill">Toys & crafts</li>
+            <li class="bos-item-pill">Reading &amp; coloring books</li>
+            <li class="bos-item-pill">LEGO &amp; building sets</li>
+            <li class="bos-item-pill">Toys &amp; crafts</li>
             <li class="bos-item-pill">Stuffed animals</li>
-            <li class="bos-item-pill">Journals & notebooks</li>
-            <li class="bos-item-pill">Coloring kits & art kits</li>
-            <li class="bos-item-pill">Crayons & markers</li>
-            <li class="bos-item-pill">Origami paper & mini puzzles</li>
-            <li class="bos-item-pill">Small card games & stickers</li>
-            <li class="bos-item-pill">Stress balls & sensory toys</li>
-            <li class="bos-item-pill">Soft toys</li>
-            <li class="bos-item-pill">Lip balm & wipes</li>
+            <li class="bos-item-pill">Journals &amp; notebooks</li>
+            <li class="bos-item-pill">Coloring &amp; art kits</li>
+            <li class="bos-item-pill">Crayons &amp; markers</li>
+            <li class="bos-item-pill">Puzzles &amp; puzzle books</li>
+            <li class="bos-item-pill">Card games &amp; stickers</li>
+            <li class="bos-item-pill">Stress &amp; sensory items</li>
+            <li class="bos-item-pill">Personal-care products</li>
+            <li class="bos-item-pill">New socks &amp; comfort items</li>
           </ul>
-          <p class="bos-note">Items may vary by age group and setting, but each bag is built with care, safety, and dignity in mind.</p>
+          <p class="bos-note">Items may vary by age group and setting. We work with community partners to ensure donations are appropriate, useful, and distributed with dignity.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Who We Serve -->
+  <section class="bos-section bos-section-alt" id="who-we-serve">
+    <div class="container">
+      <div class="bos-section-header">
+        <h2>Who We Serve</h2>
+        <p>Bags of Sunshine is intended for neighbors who could benefit from practical support, encouragement, or connection.</p>
+      </div>
+
+      <div class="bos-three-column">
+        <div class="bos-partner-card">
+          <h3>Children &amp; Families</h3>
+          <p>Children and families experiencing illness, hardship, displacement, or other circumstances where a small package of useful and engaging items can bring comfort.</p>
+        </div>
+        <div class="bos-partner-card">
+          <h3>Older Adults</h3>
+          <p>Older adults, including people experiencing social isolation, living in senior communities, or receiving support through community and care programs.</p>
+        </div>
+        <div class="bos-partner-card">
+          <h3>Patients &amp; Community Members</h3>
+          <p>Pediatric and adult patients, individuals experiencing housing or economic instability, and other underserved or isolated neighbors identified through trusted community organizations.</p>
+        </div>
+      </div>
+
+      <div class="bos-callout">
+        <p><strong>We do not define one type of person who “needs” a Bag of Sunshine.</strong> We partner with organizations that know their communities and can help us direct donated resources where a thoughtful package can make a meaningful difference.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Youth leadership & connection to Lux et Cura -->
-  <section class="bos-section bos-section-alt">
+  <section class="bos-section">
     <div class="container">
       <div class="bos-two-column">
         <div class="bos-panel">
-          <span class="bos-badge">Youth‑Led</span>
+          <span class="bos-badge">Youth-Led</span>
           <h3>Led by youth, supported by community</h3>
           <p>
-            Bags of Sunshine is designed and run by young volunteers who want to make a tangible difference in their city. Adult mentors provide guidance, but youth voices shape the ideas, outreach, and the contents of each bag.
+            Bags of Sunshine is designed and run by young volunteers who want to make a tangible difference in their communities. Adult mentors provide guidance, while youth voices shape ideas, outreach, donation drives, and aspects of the bags we assemble.
           </p>
           <p>
-            Through this project, young people learn leadership, empathy, and project‑planning skills while building a culture of kindness and service.
+            Through the project, young people learn leadership, empathy, organization, communication, and project-planning skills while building a culture of kindness and service.
           </p>
         </div>
 
         <div class="bos-panel">
           <h3>A project of Lux et Cura</h3>
           <p>
-            The Bags of Sunshine Project is one of several emerging initiatives sponsored by Lux et Cura Foundation to support youth leadership and community‑centered service.
+            Bags of Sunshine is one of the community service initiatives sponsored by Lux et Cura Foundation to support youth leadership and community-centered service.
           </p>
           <p>
-            As the foundation grows, Bags of Sunshine will sit alongside other projects that help neighbors care for one another in practical, visible ways.
+            Lux et Cura provides organizational support, mentorship, resources, and community partnerships so young people can turn compassion into practical action.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Donations -->
+  <section id="product-donations" class="bos-section bos-section-warm">
+    <div class="container">
+      <div class="bos-section-header">
+        <h2>Donate Products to Bags of Sunshine</h2>
+        <p>Have useful products that could serve a purpose in the community? We welcome product donations from businesses, manufacturers, retailers, distributors, community organizations, and individuals.</p>
+      </div>
+
+      <div class="bos-two-column">
+        <div class="bos-panel">
+          <span class="bos-badge">Corporate &amp; In-Kind Donations</span>
+          <h3>Turn useful products into community care</h3>
+          <p>
+            We are especially interested in new, safe, usable products that might otherwise go unused, liquidated, or discarded.
+          </p>
+          <ul>
+            <li>Excess or surplus inventory</li>
+            <li>Overstock</li>
+            <li>Discontinued products</li>
+            <li>Products affected by packaging or branding changes</li>
+            <li>Seasonal merchandise</li>
+            <li>Samples and promotional merchandise</li>
+            <li>Excess event or conference supplies</li>
+            <li>Other new consumer goods appropriate for charitable distribution</li>
+          </ul>
+        </div>
+
+        <div class="bos-panel">
+          <h3>We can be flexible</h3>
+          <p>
+            Donations do not have to match a predetermined shopping list. Because Bags of Sunshine can be adapted for different recipient populations, we may be able to put a wide variety of donated products to good use.
+          </p>
+          <p>
+            We welcome donations ranging from individual items and cases to larger corporate and bulk donations.
+          </p>
+          <p>
+            We can also use appropriate operational supplies such as reusable bags, shipping cartons, storage containers, labels, packing materials, printing, and transportation support.
+          </p>
+          <a href="mailto:luxetcurafoundation@gmail.com?subject=Product%20Donation%20to%20Bags%20of%20Sunshine" class="button bos-button-primary">Offer a Product Donation</a>
+          <p class="bos-note"><strong>Not sure whether we can use something?</strong> Please ask. We would rather explore a potential donation than have useful products go to waste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate & Community Partners -->
+  <section id="community-partners" class="bos-section">
+    <div class="container">
+      <div class="bos-section-header">
+        <h2>Corporate &amp; Community Partners</h2>
+        <p>There are many ways to help turn donated products and volunteer time into direct community benefit.</p>
+      </div>
+
+      <div class="bos-three-column">
+        <div class="bos-partner-card">
+          <h3>Donate Products</h3>
+          <p>Contribute appropriate excess inventory, overstock, discontinued merchandise, samples, promotional products, or other new goods.</p>
+        </div>
+        <div class="bos-partner-card">
+          <h3>Sponsor Bags of Sunshine</h3>
+          <p>Provide financial support for supplies, packing materials, transportation, community outreach, and other project costs.</p>
+        </div>
+        <div class="bos-partner-card">
+          <h3>Host a Product Drive</h3>
+          <p>Invite employees, customers, students, families, or community members to collect items requested by the project or a community partner.</p>
+        </div>
+        <div class="bos-partner-card">
+          <h3>Assemble Bags With Us</h3>
+          <p>Corporate and community groups can partner with Lux et Cura on volunteer packing events, combining charitable giving with hands-on community service.</p>
+        </div>
+        <div class="bos-partner-card">
+          <h3>Donate Operational Supplies</h3>
+          <p>Help with reusable bags, boxes, storage, labels, printing, packing supplies, transportation, or other resources that help move donations into the community.</p>
+        </div>
+        <div class="bos-partner-card">
+          <h3>Connect Us</h3>
+          <p>Know a business, manufacturer, retailer, distributor, school, hospital, senior program, or community organization that may be a good partner? Introductions are valuable.</p>
+        </div>
+      </div>
+
+      <div class="bos-callout">
+        <p><strong>Companies with excess inventory do not need to wait for a published wish list.</strong> Tell us what you have, the approximate quantity, where it is located, and any relevant expiration or use-by dates, and we can explore whether it fits a current community need.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Organizations -->
+  <section id="organization-partners" class="bos-section bos-section-alt">
+    <div class="container">
+      <div class="bos-section-header">
+        <h2>Community Organizations: Partner With Us</h2>
+        <p>We want to work with organizations that know the people and communities they serve.</p>
+      </div>
+
+      <div class="bos-two-column">
+        <div>
+          <h3>Who can partner?</h3>
+          <p>
+            We welcome conversations with hospitals, clinics, senior communities, schools, shelters, supportive-housing programs, family-service organizations, food and resource programs, and other nonprofit or community organizations.
+          </p>
+          <p>
+            Community partners can help us understand appropriate recipient populations, useful products, quantities, distribution logistics, and any program or safety requirements.
+          </p>
+        </div>
+        <div class="bos-panel">
+          <h3>Let's talk about your community</h3>
+          <p>
+            Rather than assuming what your community needs, we would like to hear from you. A Bags of Sunshine partnership can be a single project, a recurring distribution, or a youth service activity built around a specific community need.
+          </p>
+          <p><strong>Email:</strong> <a href="mailto:luxetcurafoundation@gmail.com?subject=Community%20Partnership%20with%20Bags%20of%20Sunshine">luxetcurafoundation@gmail.com</a></p>
         </div>
       </div>
     </div>
@@ -376,26 +622,26 @@
     <div class="container">
       <div class="bos-section-header">
         <h2>Donate to Bags of Sunshine</h2>
-        <p>Any donation—large or small—goes directly toward filling and delivering more bags to patients who could use encouragement.</p>
+        <p>Every contribution helps us assemble and distribute more Bags of Sunshine to community members who could use practical support, encouragement, or connection.</p>
       </div>
 
       <div class="bos-two-column">
         <div class="bos-panel">
           <h3>Donate items directly</h3>
-          <p>We welcome directly donated items from our lists, or items purchased off of our wishlists.</p>
+          <p>Individuals and groups can contribute requested items directly or purchase supplies through our current wishlists.</p>
           <ul class="bos-links-list">
             <li><a href="#" target="_blank" rel="noopener">Amazon Wishlist</a></li>
             <li><a href="#" target="_blank" rel="noopener">Target Wishlist</a></li>
           </ul>
-          <p class="bos-note">Links will be updated as needs change so that your support matches what recipients need most.</p>
+          <p class="bos-note">Wishlists reflect current needs and may change over time. Businesses and organizations considering bulk or in-kind donations should contact us directly.</p>
         </div>
 
         <div class="bos-panel">
           <h3>Make a financial gift</h3>
-          <p>Monetary donations help purchase supplies, cover packing and delivery costs, and keep Bags of Sunshine giving!</p>
+          <p>Monetary donations help purchase needed products, supplement donated inventory, obtain packing materials, support transportation and delivery, and expand Bags of Sunshine to additional community partners.</p>
           <a href="https://givebutter.com/" target="_blank" rel="noopener" class="button bos-button-primary">Donate to Bags of Sunshine</a>
           <!-- Replace with the specific Givebutter campaign URL for Bags of Sunshine -->
-          <p class="bos-note">The Bags of Sunshine project is sponsored by the Lux et Cura Foundation, a 501(c)(3) nonprofit organization. Qualifying gifted items and monetary donations may be tax deductible.</p>
+          <p class="bos-note">Lux et Cura Foundation is a tax-exempt 501(c)(3) nonprofit organization. Contributions are tax-deductible to the extent permitted by law. Lux et Cura can provide written acknowledgment of qualifying monetary and in-kind contributions. Donors are responsible for determining the value and tax treatment of contributed property.</p>
         </div>
       </div>
     </div>
@@ -406,24 +652,45 @@
     <div class="container">
       <div class="bos-section-header">
         <h2>Volunteer with Bags of Sunshine</h2>
-        <p>Help assemble, organize, and deliver Bags of Sunshine—and bring a little extra light to someone’s day.</p>
+        <p>Help assemble, organize, and support Bags of Sunshine—and bring a little extra light to someone’s day.</p>
       </div>
 
       <div class="bos-two-column">
         <div>
           <h3>Ways to help</h3>
           <ul class="simple-list">
-            <li>Join packing days to assemble bags for pediatric and elderly patients.</li>
-            <li>Help organize item drives at schools, workplaces, or community groups.</li>
-            <li>Support delivery coordination with partner sites in San Francisco.</li>
+            <li>Join packing days to assemble Bags of Sunshine.</li>
+            <li>Organize a product drive at a school, workplace, neighborhood, or community organization.</li>
+            <li>Help sort and organize donated inventory.</li>
+            <li>Create cards and messages for community members.</li>
+            <li>Help identify potential community partners.</li>
+            <li>Introduce us to a company that may have products or excess inventory to donate.</li>
+            <li>Host a corporate or group packing event.</li>
+            <li>Support delivery and project logistics when opportunities are available.</li>
           </ul>
         </div>
         <div>
-          <h3>Stay in the loop</h3>
-          <p>If you or your youth group would like to get involved, please reach out by email. We’ll share upcoming project dates, roles, and ways to help from home.</p>
-          <p><strong>Contact:</strong> <a href="mailto:luxetcurafoundation@gmail.com">luxetcurafoundation@gmail.com</a></p>
+          <h3>Schools &amp; youth groups</h3>
+          <p>
+            Bags of Sunshine can provide a structured community-service project for student groups, clubs, teams, classrooms, and youth organizations. Groups can organize a supply drive, participate in a packing event, or work with Lux et Cura to develop a service project around the needs of a community partner.
+          </p>
+          <p>
+            Adult mentors provide guidance and supervision while young people take meaningful roles in planning, organizing, and carrying out the project.
+          </p>
+          <p><strong>Contact:</strong> <a href="mailto:luxetcurafoundation@gmail.com?subject=Volunteer%20with%20Bags%20of%20Sunshine">luxetcurafoundation@gmail.com</a></p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA -->
+  <section class="bos-cta-band">
+    <div class="container bos-cta-inner">
+      <div>
+        <h2>Have something to give? Let's put it to good use.</h2>
+        <p>Whether you have a financial gift, a box of supplies, a pallet of excess inventory, a student service group, or a community connection, there may be a way to turn it into practical care for a neighbor.</p>
+      </div>
+      <a href="mailto:luxetcurafoundation@gmail.com?subject=Bags%20of%20Sunshine%20Inquiry" class="button bos-button-primary">Contact Lux et Cura</a>
     </div>
   </section>
 
@@ -432,18 +699,18 @@
     <div class="container footer-inner">
       <div class="footer-column">
         <h3>Bags of Sunshine</h3>
-        <p class="footer-tagline">Bringing joy, hope, and shine—one bag at a time.</p>
+        <p class="footer-tagline">Bringing comfort, connection, and a little sunshine to neighbors who could use it.</p>
         <p>San Francisco, CA</p>
         <p><a href="mailto:luxetcurafoundation@gmail.com">luxetcurafoundation@gmail.com</a></p>
       </div>
       <div class="footer-column">
         <h3>Sponsored by</h3>
-        <p>Bags of Sunshine is a volunteer youth‑run project sponsored by Lux et Cura Foundation.</p>
+        <p>Bags of Sunshine is a volunteer youth-led community service project sponsored by Lux et Cura Foundation.</p>
         <p><a href="index.html">Visit Lux et Cura Foundation</a></p>
       </div>
       <div class="footer-column">
         <h3>Support</h3>
-        <p>Donations to the Bags of Sunshine Project help fund supplies and outreach for local pediatric and elderly patients.</p>
+        <p>Donations of products, supplies, volunteer time, and financial support help Bags of Sunshine reach more community members with practical care and encouragement.</p>
       </div>
     </div>
     <div class="container footer-bottom">
