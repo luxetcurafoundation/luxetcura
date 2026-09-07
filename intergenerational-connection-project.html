@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intergenerational Connection Project | Lux et Cura Foundation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts: Arimo via Google Fonts; site styles shared with luxetcura.org -->
+  <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Small page-specific addition for the participant portraits. */
+    .portrait-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 32px;
+    }
+
+    .portrait-card {
+      text-align: center;
+    }
+
+    .portrait-card img {
+      display: block;
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      margin: 0 auto 12px;
+      border-radius: 2px;
+    }
+
+    .portrait-card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 700px) {
+      .portrait-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-block">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Lux et Cura Foundation logo" width="370" height="270">
+        </a>
+        <div class="tagline">
+          <span>Light and Care in Service of Community</span>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#impact">Impact</a>
+        <a href="index.html#get-involved">Get Involved</a>
+        <a href="index.html#donate">Donate</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Program Intro -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Intergenerational Connection Project</h1>
+        <p class="hero-subtitle">Building and strengthening relationships across generations.</p>
+        <p class="hero-mission">
+          The Intergenerational Connection Project brings younger volunteers together with older adults in the Bay Area Filipino community for regular conversation, companionship, practical assistance, and connection.
+        </p>
+        <div class="hero-ctas">
+          <a href="index.html#get-involved" class="button secondary">Get Involved</a>
+          <a href="mailto:info@luxetcura.org" class="button primary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Connection Matters -->
+  <section class="section">
+    <div class="container section-inner">
+      <div class="section-header">
+        <h2>Why It Matters</h2>
+        <p>
+          As people grow older, the number of people they see and talk with regularly can sometimes become smaller. Distance, changes in health or mobility, and the increasing use of technology in everyday life can make staying connected more difficult.
+        </p>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <h3>More than companionship</h3>
+          <p>
+            The people around us form an informal safety net. They answer questions, share information, help with small problems, and notice when something has changed.
+          </p>
+        </div>
+        <div>
+          <h3>One relationship at a time</h3>
+          <p>
+            Sometimes, simply having someone who checks in regularly and knows you well enough to notice can matter. This project seeks to strengthen that human connection one relationship at a time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section-alt">
+    <div class="container section-inner">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>
+          The project focuses on a small number of meaningful, sustained relationships rather than one-time service encounters.
+        </p>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <h3>Regular connection</h3>
+          <p>
+            Older adults are identified through trusted community partners. Volunteers are then connected with older community members who may benefit from additional social connection or practical support.
+          </p>
+          <p>
+            Whenever possible, volunteers spend time with the same participants regularly over several months, allowing trust and familiarity to develop.
+          </p>
+        </div>
+        <div>
+          <h3>Practical support</h3>
+          <p>
+            A visit may be as simple as sitting together and talking. At another visit, a volunteer might help with a technology question, organize photographs, arrange food delivery, or help an older adult connect with family.
+          </p>
+          <p>
+            The needs will be different for every participant. The goal is to be useful, respectful, and present.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connection Goes Both Ways -->
+  <section class="section">
+    <div class="container section-inner">
+      <div class="section-header">
+        <h2>Connection Goes Both Ways</h2>
+        <p>
+          This is not simply a program in which young people “help the elderly.” Intergenerational relationships are reciprocal.
+        </p>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <h3>Learning from experience</h3>
+          <p>
+            Older adults bring decades of family history, professional experience, cultural traditions, and personal knowledge that younger generations can learn from.
+          </p>
+        </div>
+        <div>
+          <h3>Sharing what we know</h3>
+          <p>
+            A student might help someone learn to use a new technology and then hear stories about childhood, family, work, immigration, or what San Francisco was like decades ago. Both generations have something to share.
+          </p>
+        </div>
+      </div>
+
+      <div class="portrait-grid" aria-label="Program participants">
+        <div class="portrait-card">
+          <img src="images/lolo.jpg" alt="Participant in the Intergenerational Connection Project">
+          <p>Building connection across generations.</p>
+        </div>
+        <div class="portrait-card">
+          <img src="images/lola.jpg" alt="Participant in the Intergenerational Connection Project">
+          <p>Relationships built through regular conversation and time together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Volunteers -->
+  <section class="section section-alt">
+    <div class="container section-inner">
+      <div class="section-header">
+        <h2>For Volunteers</h2>
+        <p>
+          This project is for volunteers who are willing to do something more demanding than participate in a single day of service.
+        </p>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <h3>What you need</h3>
+          <p>
+            You do not need special technical skills. You do need to be reliable, patient, curious, respectful, and willing to listen.
+          </p>
+        </div>
+        <div>
+          <h3>What to expect</h3>
+          <p>
+            Volunteers should expect to build relationships over time and to show up consistently for the people with whom they are connected.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Project -->
+  <section class="section">
+    <div class="container section-inner">
+      <div class="section-header">
+        <h2>About the Project</h2>
+        <p>
+          The Intergenerational Connection Project is a youth-led program of the Lux et Cura Foundation serving older adults in the Bay Area Filipino community.
+        </p>
+      </div>
+
+      <div class="two-column">
+        <div>
+          <p>
+            Through sustained intergenerational relationships, practical assistance, and regular human connection, the project seeks to support older adults while helping younger generations learn from and remain connected with the generations who came before them.
+          </p>
+        </div>
+        <div>
+          <p>
+            The project is being developed as a small, relationship-centered initiative. More information about participation and volunteer opportunities will be added as the program grows.
+          </p>
+          <p><strong>Questions?</strong> Reach out at <a href="mailto:info@luxetcura.org">info@luxetcura.org</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-column">
+        <h3>Lux et Cura Foundation</h3>
+        <p class="footer-tagline">“Light and Care in Service of Community”</p>
+        <p>San Francisco, CA</p>
+        <p><a href="mailto:info@luxetcura.org">info@luxetcura.org</a></p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Mission Snapshot</h3>
+        <p>
+          Lux et Cura Foundation empowers youth to lead meaningful service and community projects that improve health, well-being, and social connection.
+        </p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Nonprofit Status</h3>
+        <p>Lux et Cura Foundation is a 501(c)(3) nonprofit organization.</p>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> Lux et Cura Foundation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
