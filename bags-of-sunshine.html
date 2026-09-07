@@ -23,6 +23,65 @@
     }
 
     /* Layout */
+
+    /* Photos */
+    .bos-hero-photo {
+      background-color: var(--lc-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 8px;
+    }
+
+    .bos-hero-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .bos-photo-caption {
+      margin: 8px 4px 2px;
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.45;
+    }
+
+    .bos-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .bos-photo-card {
+      margin: 0;
+      background-color: var(--lc-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 6px;
+    }
+
+    .bos-photo-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .bos-photo-card figcaption {
+      padding: 8px 4px 4px;
+      font-size: 0.78rem;
+      color: #666;
+      line-height: 1.45;
+    }
+
+    .bos-activity-note {
+      max-width: 760px;
+      margin: 18px auto 0;
+      text-align: center;
+      color: #555;
+      line-height: 1.6;
+    }
     .bos-hero {
       background-color: var(--lc-grey);
       border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -322,6 +381,10 @@
         grid-template-columns: 1fr;
       }
 
+      .bos-photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .bos-cta-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -355,7 +418,7 @@
       <nav class="main-nav">
         <a href="index.html#about">About</a>
         <a href="index.html#programs">Programs</a>
-        <a href="#community-partners">Community Partners</a>
+        <a href="#who-we-serve">Who We Serve</a>
         <a href="#donate">Donate</a>
         <a href="#volunteer">Volunteer</a>
         <a href="index.html#contact">Contact</a>
@@ -394,8 +457,9 @@
         </p>
       </div>
 
-      <div class="bos-logo-block">
-        <img src="images/bags-of-sunshine-logo.png" alt="Bags of Sunshine project logo">
+      <div class="bos-hero-photo">
+        <img src="images/work-party.jpg" alt="Youth volunteers working together at a Bags of Sunshine work party">
+        <p class="bos-photo-caption">Recent Bags of Sunshine work party.</p>
       </div>
     </div>
   </section>
@@ -467,9 +531,42 @@
           <p>Pediatric and adult patients, individuals experiencing housing or economic instability, and other underserved or isolated neighbors identified through trusted community organizations.</p>
         </div>
       </div>
+    </div>
   </section>
 
  
+
+
+  <!-- Recent Work -->
+  <section class="bos-section bos-section-alt" id="recent-work">
+    <div class="container">
+      <div class="bos-section-header">
+        <h2>Recent Work</h2>
+        <p>At our work parties, volunteers make the small things that become part of a larger act of care—from handmade cards and friendship bracelets to other items created for Bags of Sunshine recipients.</p>
+      </div>
+
+      <div class="bos-photo-grid">
+        <figure class="bos-photo-card">
+          <img src="images/handmade-cards.jpg" alt="Handmade encouragement cards created for Bags of Sunshine">
+          <figcaption>Handmade cards with messages of encouragement.</figcaption>
+        </figure>
+        <figure class="bos-photo-card">
+          <img src="images/friendship-bracelet-making.jpg" alt="Volunteer making a friendship bracelet at a Bags of Sunshine work party">
+          <figcaption>Volunteers making handmade friendship bracelets.</figcaption>
+        </figure>
+        <figure class="bos-photo-card">
+          <img src="images/beading-bracelets.jpg" alt="Volunteer assembling a beaded bracelet">
+          <figcaption>Beading and assembling small gifts by hand.</figcaption>
+        </figure>
+        <figure class="bos-photo-card">
+          <img src="images/beaded-bracelets.jpg" alt="Handmade beaded bracelets created at a Bags of Sunshine work party">
+          <figcaption>Finished bracelets ready to become part of a care package.</figcaption>
+        </figure>
+      </div>
+
+      <p class="bos-activity-note">These are the people and the kinds of hands-on activities that make Bags of Sunshine possible.</p>
+    </div>
+  </section>
 
   <!-- Product Donations -->
   <section id="product-donations" class="bos-section bos-section-warm">
