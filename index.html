@@ -8,6 +8,151 @@
   <!-- Fonts: Arimo via Google Fonts; Calling Code assumed self-hosted or system fallback -->
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Page-specific photo layout -->
+  <style>
+    .home-hero-photo {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 8px;
+    }
+
+    .home-hero-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .home-photo-caption {
+      margin: 8px 4px 2px;
+      color: #666;
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .home-hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .home-work-section {
+      padding: 50px 0;
+      background-color: #f5f5f7;
+    }
+
+    .home-work-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .home-work-header h2 {
+      margin-bottom: 8px;
+    }
+
+    .home-work-header p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .home-photo-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr;
+      grid-template-rows: 210px 210px;
+      gap: 14px;
+    }
+
+    .home-photo-card {
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .home-photo-card:first-child {
+      grid-row: 1 / span 2;
+    }
+
+    .home-photo-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .home-photo-card figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 9px 11px;
+      background: rgba(29,29,31,0.78);
+      color: #fff;
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    .home-photo-card.featured img {
+      object-position: center;
+    }
+
+    .home-about-photo {
+      margin-top: 30px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 8px;
+    }
+
+    .home-about-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .home-about-photo figcaption {
+      margin: 8px 4px 2px;
+      color: #666;
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 900px) {
+      .home-hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .home-photo-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 220px 220px;
+      }
+
+      .home-photo-card:first-child {
+        grid-column: 1 / span 2;
+        grid-row: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .home-photo-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      .home-photo-card:first-child {
+        grid-column: auto;
+      }
+
+      .home-photo-card {
+        height: 260px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Site Header -->
@@ -35,7 +180,7 @@
 
   <!-- Hero / Intro Section -->
   <section class="hero">
-    <div class="container hero-inner">
+    <div class="container hero-inner home-hero-inner">
       <div class="hero-text">
         <h1>Lux et Cura Foundation</h1>
         <p class="hero-subtitle">A volunteer‑driven nonprofit in San Francisco, bringing light and care to our communities.</p>
@@ -47,6 +192,11 @@
           <a href="#get-involved" class="button secondary">Volunteer</a>
         </div>
       </div>
+
+      <figure class="home-hero-photo">
+        <img src="images/goldengatebridge.jpg" alt="Golden Gate Bridge in San Francisco">
+        <figcaption class="home-photo-caption">San Francisco, where Lux et Cura is based.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -73,6 +223,11 @@
           </ul>
         </div>
       </div>
+
+      <figure class="home-about-photo">
+        <img src="images/gardening.jpg" alt="Hands-on gardening activity in a community setting">
+        <figcaption>Hands-on community work.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -109,6 +264,43 @@
               Learn more about the Intergenerational Connection Project &#8594;
             </a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work in Action -->
+  <section class="home-work-section" aria-label="Work in action">
+    <div class="container">
+      <div class="home-work-header">
+        <h2>Work in Action</h2>
+        <p>A few glimpses of the hands-on work behind Lux et Cura's community service projects.</p>
+      </div>
+
+      <div class="home-photo-grid">
+        <figure class="home-photo-card featured">
+          <img src="images/handmade-cards.jpg" alt="Handmade encouragement cards created for a community service project">
+          <figcaption>Handmade cards created to bring encouragement and connection.</figcaption>
+        </figure>
+
+        <figure class="home-photo-card">
+          <img src="images/beading-bracelets.jpg" alt="Volunteer making a beaded bracelet during a service project">
+          <figcaption>Making small handmade items for care packages.</figcaption>
+        </figure>
+
+        <figure class="home-photo-card">
+          <img src="images/gardening2.jpg" alt="Community gardening activity">
+          <figcaption>Hands-on work and community participation.</figcaption>
+        </figure>
+
+        <figure class="home-photo-card">
+          <img src="images/goldengatebridge.jpg" alt="Golden Gate Bridge in San Francisco">
+          <figcaption>San Francisco roots.</figcaption>
+        </figure>
+
+        <figure class="home-photo-card">
+          <img src="images/gardening.jpg" alt="Community gardening activity with flowers and planting materials">
+          <figcaption>Practical projects, carried out together.</figcaption>
+        </figure>
       </div>
     </div>
   </section>
