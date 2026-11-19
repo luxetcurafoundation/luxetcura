@@ -5,12 +5,11 @@
   <title>Intergenerational Connection Project | Lux et Cura Foundation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts: Arimo via Google Fonts; site styles shared with luxetcura.org -->
+  <!-- Shared Lux et Cura site styles -->
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* Small page-specific addition for the participant portraits. */
     .portrait-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -18,9 +17,7 @@
       margin-top: 32px;
     }
 
-    .portrait-card {
-      text-align: center;
-    }
+    .portrait-card { text-align: center; }
 
     .portrait-card img {
       display: block;
@@ -32,32 +29,54 @@
       border-radius: 2px;
     }
 
-    .portrait-card p {
-      margin: 0;
-      font-size: 0.95rem;
+    .portrait-card p { margin: 0; font-size: 0.95rem; }
+
+    .storycorps-callout {
+      margin-top: 32px;
+      padding: 28px;
+      border-left: 4px solid currentColor;
+      background: rgba(0, 0, 0, 0.035);
+    }
+
+    .storycorps-callout h3 { margin-top: 0; }
+    .storycorps-callout p:last-of-type { margin-bottom: 0; }
+
+    .storycorps-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .stat-callout {
+      margin-top: 32px;
+      padding: 24px 28px;
+      border-left: 4px solid currentColor;
+    }
+
+    .stat-callout strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.2rem;
     }
 
     @media (max-width: 700px) {
-      .portrait-grid {
-        grid-template-columns: 1fr;
-      }
+      .portrait-grid { grid-template-columns: 1fr; }
+      .storycorps-callout, .stat-callout { padding: 20px; }
     }
   </style>
 </head>
 <body>
-  <!-- Site Header -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo-block">
         <a href="index.html">
           <img src="images/logo.png" alt="Lux et Cura Foundation logo" width="370" height="270">
         </a>
-        <div class="tagline">
-          <span>Light and Care in Service of Community</span>
-        </div>
+        <div class="tagline"><span>Light and Care in Service of Community</span></div>
       </div>
 
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html#about">About</a>
         <a href="index.html#programs">Programs</a>
         <a href="index.html#impact">Impact</a>
@@ -68,24 +87,22 @@
     </div>
   </header>
 
-  <!-- Program Intro -->
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-text">
         <h1>Intergenerational Connection Project</h1>
         <p class="hero-subtitle">Building and strengthening relationships across generations.</p>
         <p class="hero-mission">
-          The Intergenerational Connection Project brings younger volunteers together with older adults in the Bay Area Filipino community for regular conversation, companionship, practical assistance, and connection.
+          The Intergenerational Connection Project brings younger volunteers together with older adults in the Bay Area community for regular conversation, companionship, practical assistance, and connection.
         </p>
         <div class="hero-ctas">
-          <a href="index.html#get-involved" class="button secondary">Get Involved</a>
-          <a href="mailto:info@luxetcura.org" class="button primary">Contact Us</a>
+          <a href="https://forms.gle/JcYbmzF3g48WaYae6" class="button primary">Sign up for an oral history interview</a>
+          <a href="mailto:info@luxetcura.org" class="button secondary">Contact Us</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Connection Matters -->
   <section class="section">
     <div class="container section-inner">
       <div class="section-header">
@@ -109,10 +126,17 @@
           </p>
         </div>
       </div>
+
+      <aside class="stat-callout">
+        <strong>Social connection matters for health, too.</strong>
+        <p>
+          The U.S. Surgeon General reports that chronic loneliness and social isolation among older adults are associated with an approximately 50% higher risk of developing dementia. This is a population-level association, not a prediction for any one person.
+          <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/connection/index.html" target="_blank" rel="noopener noreferrer">Read the Surgeon General’s social connection materials</a>.
+        </p>
+      </aside>
     </div>
   </section>
 
-  <!-- How It Works -->
   <section class="section section-alt">
     <div class="container section-inner">
       <div class="section-header">
@@ -137,22 +161,39 @@
           <p>
             A visit may be as simple as sitting together and talking. At another visit, a volunteer might help with a technology question, organize photographs, arrange food delivery, or help an older adult connect with family.
           </p>
-          <p>
-            The needs will be different for every participant. The goal is to be useful, respectful, and present.
-          </p>
+          <p>The needs will be different for every participant. The goal is to be useful, respectful, and present.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Connection Goes Both Ways -->
+  <section class="section" id="storycorps">
+    <div class="container section-inner">
+      <div class="section-header">
+        <h2>Volunteer: Record a Story Together</h2>
+        <p>
+          Sit down with an older adult for an oral history conversation. Listen, ask thoughtful questions, and help preserve the stories and experiences they choose to share.
+        </p>
+      </div>
+
+      <div class="storycorps-callout">
+        <h3>StoryCorps-style oral history volunteer opportunity</h3>
+        <p>
+          Interested in taking part? Start with the pre-interview registration form. After your conversation, please complete the short post-interview reflection.
+        </p>
+        <div class="storycorps-actions">
+          <a href="https://forms.gle/JcYbmzF3g48WaYae6" class="button primary">Pre-Interview Registration</a>
+          <a href="https://forms.gle/3Rn13UJ4kXtVsk7L9" class="button secondary">Post-Interview Reflection</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="container section-inner">
       <div class="section-header">
         <h2>Connection Goes Both Ways</h2>
-        <p>
-          Intergenerational relationships are reciprocal.
-        </p>
+        <p>Intergenerational relationships are reciprocal.</p>
       </div>
 
       <div class="two-column">
@@ -183,41 +224,32 @@
     </div>
   </section>
 
-  <!-- For Volunteers -->
   <section class="section section-alt">
     <div class="container section-inner">
       <div class="section-header">
         <h2>For Volunteers</h2>
-        <p>
-          This project is for volunteers who are willing to do something more demanding than participate in a single day of service.
-        </p>
+        <p>This project is for volunteers who are willing to do something more demanding than participate in a single day of service.</p>
       </div>
 
       <div class="two-column">
         <div>
           <h3>What you need</h3>
-          <p>
-            You do not need special technical skills. You do need to be reliable, patient, curious, respectful, and willing to listen.
-          </p>
+          <p>You do not need special technical skills. You do need to be reliable, patient, curious, respectful, and willing to listen.</p>
         </div>
         <div>
           <h3>What to expect</h3>
-          <p>
-            Volunteers should expect to build relationships over time and to show up consistently for the people with whom they are connected.
-          </p>
+          <p>Volunteers should expect to build relationships over time and to show up consistently for the people with whom they are connected.</p>
         </div>
       </div>
+      <p><a href="https://forms.gle/JcYbmzF3g48WaYae6">Register for the oral history volunteer opportunity</a>.</p>
     </div>
   </section>
 
-  <!-- About the Project -->
   <section class="section">
     <div class="container section-inner">
       <div class="section-header">
         <h2>About the Project</h2>
-        <p>
-          The Intergenerational Connection Project is a youth-led program of the Lux et Cura Foundation serving older adults in the Bay Area Filipino community.
-        </p>
+        <p>The Intergenerational Connection Project is a youth-led program of the Lux et Cura Foundation serving older adults in the Bay Area community.</p>
       </div>
 
       <div class="two-column">
@@ -228,13 +260,13 @@
         </div>
         <div>
           <p>
-            The project is being developed as a small, relationship-centered initiative. For more information about participation and volunteer opportunities, please reach out at <a href="mailto:info@luxetcura.org">info@luxetcura.org</a>.</p>
+            The project is being developed as a small, relationship-centered initiative. For more information about participation and volunteer opportunities, please reach out at <a href="mailto:info@luxetcura.org">info@luxetcura.org</a>.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact / Footer -->
   <footer class="site-footer" id="contact">
     <div class="container footer-inner">
       <div class="footer-column">
@@ -246,9 +278,7 @@
 
       <div class="footer-column">
         <h3>Mission Snapshot</h3>
-        <p>
-          Lux et Cura Foundation empowers youth to lead meaningful service and community projects that improve health, well-being, and social connection.
-        </p>
+        <p>Lux et Cura Foundation empowers youth to lead meaningful service and community projects that improve health, well-being, and social connection.</p>
       </div>
 
       <div class="footer-column">
@@ -263,7 +293,6 @@
   </footer>
 
   <script>
-    // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
